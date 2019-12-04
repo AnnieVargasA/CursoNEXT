@@ -18,7 +18,7 @@ export default class extends React.Component{
           margin-top:3%
         }
         img{
-          width:500px;
+          width:300px;
           align-item:center
           margin-top:3%;
         }

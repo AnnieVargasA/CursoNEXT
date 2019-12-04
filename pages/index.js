@@ -1,28 +1,59 @@
+import 'isomorphic-fetch';
 export default class extends React.Component{
+  static async getInitialProps() {
+    let req = await fetch
+    ('https://api.audioboom.com/channels/recommended')
+    let { body: channels } = await req.json()
+
+    return{ channels: channels}
+  }
   render(){
+    const { channels } = this.props
     return <div>
-      <h1>Hola Annie!</h1>
-      <p>Este es el curso de Next.js con React.js</p>
-      <img src="../static/platzi-logo.png" alt="Platzi-logo"/>
+      <header>Podcasts</header>
+      <div className="container">
+        {channels.map((channel) =>(
+          <div className="channel">
+            <img src={channel.urls.logo_image.original}/>
+            <h2>{channel.title}</h2>
+          </div>
+        ))}
+      </div>
       <style jsx>{`
-        h1{
-          color: red;
+        header{
+          color: #fff;
+          background: #8756ca;
+          padding: 15px;
+          text-align: center;
+
         }
-        :global(div p){
-          color: green;
+        .container{
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-around;
         }
-        img{
-          max-width: 50%;
-          display: block;
-          margi: 0 auto;
+        .channel{
+          padding:15px;
+          width:150px;
         }
-        div{
-          width:100%
+        .channel img{
+          width: 100%;
+          border-radius: 5px;
+        }
+        h2{
+          padding 5px;
+          font-size: 1em;
+          font-weight: 600;
+          margin: 0;
+          text-align: center;
         }
       `}
       </style>
       <style jsx global>{`
         body{
+          margin:0;
+          font-famili:system-ui;
           background: white;
         }
       `}

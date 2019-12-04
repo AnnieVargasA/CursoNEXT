@@ -6,3 +6,17 @@
       "build":"next build",
       "start": "next start"
     }
+4. Para correr el ambiente dev "npm run dev"
+
+Título: getInitialProps()
+Es una función que nos permite cargar el contenido de una página cuando debemos llamar una API
+la estructura es:
+
+static async getInitialProps(){
+  //Aqui traemos los datos
+  let request = await fetch ('...')
+  let datos = await request.json()
+  return{datos}
+}
+Nota: getInitialProps() únicamente funciona en "pages" y es parte de Next.js.
+NO funciona en components o en algún otro Framework
