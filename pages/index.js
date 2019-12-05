@@ -14,7 +14,7 @@ export default class extends React.Component{
       <header>Podcasts</header>
       <div className="container">
         {channels.map((channel) =>(
-          <Link href="./channel.js">
+          <Link href={`/channel?id=${ channel.id }`}>
             <a className="channel">
               <center>
                 <img src={channel.urls.logo_image.original}/>

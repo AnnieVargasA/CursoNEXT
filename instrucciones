@@ -8,6 +8,8 @@
     }
 4. Para correr el ambiente dev "npm run dev"
 
+-----------------------
+
 Tema: getInitialProps()
 Es una función que nos permite cargar el contenido de una página cuando debemos llamar una API
 la estructura es:
@@ -21,6 +23,8 @@ static async getInitialProps(){
 Nota: getInitialProps() únicamente funciona en "pages" y es parte de Next.js.
 NO funciona en components o en algún otro Framework
 
+-----------------------
+
 Tema:Link
 Debemos importar Link:
 import Link from 'next/link'
@@ -29,3 +33,7 @@ import Link from 'next/link'
       <h1>Link</h1>
     </a>
   </Link>
+
+-----------------------
+
+Tema: Recibiendo parámetros
