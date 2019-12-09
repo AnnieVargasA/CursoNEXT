@@ -11,7 +11,7 @@ export default class extends React.Component{
   render(){
     const { channels } = this.props
     return <div>
-      <header>Podcasts</header>
+    <header>Podcasts</header>
       <div className="container">
         {channels.map((channel) =>(
           <Link href={`/channel?id=${ channel.id }`}>
